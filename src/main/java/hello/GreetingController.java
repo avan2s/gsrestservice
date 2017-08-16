@@ -14,9 +14,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -40,7 +38,7 @@ public class GreetingController {
         URI location = new URI("http://www.google.de");
         responseHeaders.setLocation(location);
         responseHeaders.set("h1", "h1Value");
-        
+
         if (user.getUserId() == userId) {
             return new ResponseEntity<>(new StringResponse("Du bist der richtige"), responseHeaders, HttpStatus.OK);
         } else {
